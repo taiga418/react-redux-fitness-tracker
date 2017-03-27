@@ -1,15 +1,30 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { TodoList } from './components/test';
+import React from 'react'
+import { render } from 'react-dom'
+// import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+// import store from './reducers/index'
+import DashBoard from './containers/dashboard'
 
-const dummyTodos = [
-  { id: 0, isDone: true,  text: 'make cosmponents' },
-  { id: 1, isDone: false, text: 'design actions' },
-  { id: 2, isDone: false, text: 'implement reducer' },
-  { id: 3, isDone: false, text: 'connect components' }
-];
+// REACT ROUTER
+
+import { createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk';
+
+// import * as chartActions from '../actions/chart'
+import reducer from './reducers/index'
+
+
+const createStoreWithMiddleware = applyMiddleware(
+  thunkMiddleware,
+)(createStore);
+
+
+const store = createStoreWithMiddleware(reducer, {});
+
 
 render(
-  <TodoList todos={dummyTodos} />,
+  <Provider {...{ store }}>
+    <DashBoard />
+  </Provider>,
   document.getElementById('app')
-);
+)
