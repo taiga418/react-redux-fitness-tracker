@@ -3,8 +3,8 @@ import { Map } from 'immutable'
 
 const initialState = Map({
   tooltipCoords: {
-    x: 0,
-    y: 0
+    left: -9999999,
+    top: -999999
   },
   tooltipVisible: false
 })
