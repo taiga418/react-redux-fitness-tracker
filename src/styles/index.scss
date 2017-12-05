@@ -1,0 +1,14 @@
+// definitions of global variables
+
+// fonts
+$text-font: "Open Sans", Arial, sans-serif;
+
+// colors
+$olive: #88A573;
+$offwhite: #FDFCFA;
+
+// TODO: reset styles
+body{
+  font-size: 14px;
+  font-family: $text-font;
+}

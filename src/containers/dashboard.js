@@ -1,43 +1,23 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { toggleTooltipVisiblity as toggle, setTooltipCoords as setCoords } from '../actions/chart';
-import ProgressChart from '../components/progress-chart';
 
-const { shape, number, bool, func } = PropTypes;
+// const { shape, number, bool, func } = PropTypes;
 
-const propTypes = {
-  tooltipCoords: shape({
-    x: number,
-    y: number
-  }).isRequired,
-  tooltipVisible: bool,
-  toggleTooltipVisiblity: func.isRequired,
-  setTooltipCoords: func.isRequired
-};
+const propTypes = {};
 
-const defaultProps = {
-  tooltipVisible: false
-};
+const defaultProps = {};
 
-const DashBoard = ({ toggleTooltipVisiblity, setTooltipCoords, tooltipCoords, tooltipVisible }) =>
+const DashBoard = () =>
   (
-    <ProgressChart
-      {...{
-        toggleTooltipVisiblity,
-        setTooltipCoords,
-        tooltipCoords,
-        tooltipVisible
-      }}
-    />
+    <div>
+      DASHBORAD
+    </div>
   );
 
-const mapState = (state) => {
-  const { chart } = state;
-  return {
-    tooltipCoords: chart.get('tooltipCoords'),
-    tooltipVisible: chart.get('tooltipVisible')
-  };
-};
+const mapState = () => ({});
+  // const { chart } = state;
+  // tooltipCoords: chart.get('tooltipCoords'),
 
 export const mapDispatch = dispatch => ({
   toggleTooltipVisiblity: value => dispatch(toggle(value)),
