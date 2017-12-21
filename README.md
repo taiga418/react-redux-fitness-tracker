@@ -14,3 +14,6 @@ NOTES
 
 for node-sass issues
 https://github.com/sass/node-sass/issues/1527
+
+STARTING DEV SERVER
+1. webpack-dev-server
